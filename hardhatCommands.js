@@ -11,3 +11,4 @@ npx hardhat run scripts/deploy.ts --network goerli
 // option + shift + 5 = []
 npx hardhat verify --network goerli <contract address> <constructor argument 1>
 npm install --save-dev dotenv // install .env
+npx hardhat verify --network <network> DEPLOYED_CONTRACT_ADDRESS "Constructor argument 1"

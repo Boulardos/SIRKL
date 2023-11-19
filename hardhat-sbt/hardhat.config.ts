@@ -1,5 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "@nomiclabs/hardhat-etherscan";
 require ('dotenv').config();
 
 
@@ -36,6 +37,22 @@ const config: HardhatUserConfig = {
   // etherscan: {
   //   apiKey: "GVMRE3AYI2HPPRFHNVQYV55AR2Y1VZ7C5T",
   // },
+
+  etherscan: {
+    apiKey: {
+      titan: "abc"
+    },
+    customChains: [
+      {
+        network: "titan",
+        chainId: 1517929550,
+        urls: {
+          apiURL: "https://staging-aware-chief-gianfar.explorer.staging-v3.skalenodes.com/api",
+          browserURL: "https://staging-aware-chief-gianfar.explorer.staging-v3.skalenodes.com"
+        }
+      }
+    ]
+  },
 
   solidity: {
     compilers: [

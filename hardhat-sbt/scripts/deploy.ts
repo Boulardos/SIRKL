@@ -37,7 +37,9 @@ function delay(ms: number) {
 
 async function main() {
   const constructorArgs = ['ipfs://QmcMuXzFw4f1Qjizsxt17qqrYqQJduBzEwNdabPFxYGEFe'];
-  const contract = await ethers.deployContract("SIRKLsbt", constructorArgs);
+  const gasLimit = 5000000;
+  const contract = await ethers.deployContract("SIRKLsbt", constructorArgs,{gasLimit});
+
 
   await contract.waitForDeployment();
   const contractAddress = await contract.getAddress();
